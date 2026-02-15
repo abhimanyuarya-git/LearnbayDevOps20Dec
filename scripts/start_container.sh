@@ -5,13 +5,13 @@ REGION="ap-south-1"
 
 # Get credentials from SSM
 DOCKER_USERNAME=$(aws ssm get-parameter \
-  --name "/learnbayapp/docker/username" \
+  --name "/learnbay-app/dockercredentials/username1" \
   --region $REGION \
   --query "Parameter.Value" \
   --output text)
 
 DOCKER_PASSWORD=$(aws ssm get-parameter \
-  --name "/learnbayapp/docker/password" \
+  --name "/learnbay-app/dockercredentials/password1" \
   --with-decryption \
   --region $REGION \
   --query "Parameter.Value" \
